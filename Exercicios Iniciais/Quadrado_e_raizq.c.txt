@@ -1,0 +1,20 @@
+Elaborar um programa para o cálculo do quadrado e da raiz
+quadrada de um número dado pelo usuário.
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float x, quadrado, raizq;
+    
+    printf("Digite um número: ");
+    scanf("%f", &x);
+    
+    quadrado = pow(x, 2);
+    raizq = sqrt(x);
+    
+    printf("O quadrado de %.2f é: %.2f\n", x, quadrado);
+    printf("A raiz quadrada de %.2f é: %.2f", x, raizq);
+    return 0;
+}

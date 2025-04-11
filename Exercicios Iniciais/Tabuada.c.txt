@@ -1,0 +1,26 @@
+ Fazer um programa que pergunta um número ao usuário, e mostra
+sua tabuada completa (de 1 até 10). O número digitado não pode
+ser zero. Caso seja, mensagem de erro e retorna para nova
+digitação.
+
+#include <stdio.h>
+
+int main(){
+
+    int x;
+
+    printf("Deseja a tabuada para qual valor? ");
+    inicio:
+    scanf("%d", &x);
+
+    if(x == 0){
+        printf("Não é possível dividir por 0! Tente novamente: ");
+        goto inicio;
+    }
+
+    for(int y = 1; y <= 10; y++){
+        printf("%d x %d = %d\n", x, y, x * y);
+    }   
+
+    return 0;
+}

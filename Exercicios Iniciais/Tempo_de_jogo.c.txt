@@ -1,0 +1,29 @@
+Problema "tempo_de_jogo"
+Leia a hora inicial e a hora final de um jogo. A seguir calcule a duração do jogo, sabendo que o mesmo
+pode começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora e máxima de 24
+horas.
+
+#include <stdio.h>
+
+int main() {
+    
+    int inicial = 0, final = 0, jogo;
+    
+    printf("Hora inicial: ");
+    scanf("%i", &inicial);
+    printf("Hora final: ");
+    scanf("%i", &final);
+    
+    if (inicial > final){
+        jogo = 24 - inicial + final;
+        printf("O jogo durou %i hora(s)", jogo);
+    }
+    else if (inicial < final){
+        jogo = final - inicial;
+        printf("O jogo durou %i hora(s)", jogo);
+    }
+    else{
+        printf("O jogo durou 24 hora(s)");
+    }
+    return 0;    
+}

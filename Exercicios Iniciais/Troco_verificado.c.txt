@@ -1,0 +1,30 @@
+Problema "troco_verificado"
+Fazer um programa para calcular o troco no processo de pagamento de um produto de uma mercearia.
+O programa deve ler o preço unitário do produto, a quantidade de unidades compradas deste produto,
+e o valor em dinheiro dado pelo cliente. Seu programa deve mostrar o valor do troco a ser devolvido
+ao cliente. Se o dinheiro dado pelo cliente não for suficiente, mostrar uma mensagem informando o
+valor restante conforme exemplo.
+
+#include <stdio.h>
+
+int main() {
+    
+    float preco = 0, dinheiro = 0, troco, faltando;
+    int quantidade;
+    
+    printf("Preço unitário do produto: ");
+    scanf("%f", &preco);
+    printf("Quantidade comprada: ");
+    scanf("%i", &quantidade);
+    printf("Dinheiro recebido: ");
+    scanf("%f", &dinheiro);
+    
+    if (dinheiro > quantidade * preco){
+        troco = dinheiro - quantidade * preco;
+        printf("Troco: R$%.2f", troco);
+    }else{
+        faltando = preco * quantidade - dinheiro;
+        printf("Dinheiro insuficiente. Faltam R$%.2f", faltando);
+    }
+    return 0;
+}

@@ -1,0 +1,35 @@
+Elabore um programa que receba quatro notas de um
+aluno e calcule a média aritmética delas, dizendo se o
+aluno é aprovado, reprovado ou em exame:
+
+– Aprovação com média maior ou igual a sete.
+– Reprovação com média menor ou igual a quatro.
+– Exame nota entre cinco e seis.
+
+#include <stdio.h>
+
+    int main()
+{
+    float nota = 0, cont = 0, media = 0, soma = 0;
+    
+    printf("Digite as notas:\n");
+    
+    while(cont < 4){
+        scanf("%f", &nota);
+        cont++;
+        soma = soma + nota;
+    }
+    
+    media = soma / cont;
+    
+    printf("A media é: %.2f\n", media);
+    
+    if(media >= 7){
+        printf("Aprovado!\n");
+    }else if(media >= 5 && media < 7){
+        printf("Em exame!");
+    }else{
+        printf("Reprovado!");
+    }
+    return 0;   
+}

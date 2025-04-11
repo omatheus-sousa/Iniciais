@@ -1,0 +1,18 @@
+Elaborar um programa para cálculo do perímetro de uma
+circunferência cujo valor de raio é fornecido pelo usuário.
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float perimetro = 0, raio = 0;
+    
+    printf("Digite o raio: ");
+    scanf("%f", &raio);
+    
+    perimetro = 2 * M_PI * raio;
+    
+    printf("O perimetro da circunferencia é: %.2f\n", perimetro);
+    return 0;
+}

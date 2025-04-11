@@ -1,0 +1,26 @@
+Fazer um programa em "C" que solicite 2 números e informe:
+a) A soma dos números;
+b) O produto do primeiro número pelo quadrado do segundo;
+c) O quadrado do primeiro número;
+d) A raiz quadrada da soma dos quadrados;
+e) O seno da diferença do primeiro número pelo segundo;
+f) O módulo do primeiro número.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x = 0, y = 0;
+
+    printf("Digite dois numeros:\n");
+    scanf("%d %d", &x, &y);
+    
+    printf("\n%d\n", x + y);
+    printf("%d\n", x * (int)pow(y, 2));
+    printf("%d\n", (int)pow(x, 2));
+    printf("%d\n", (int)sqrt ((int)pow(x,2) + (int)pow(y,2)));
+    printf("%d\n", (int)sin(x - y));
+    printf("%d\n", abs(x));
+
+    return 0;
+}

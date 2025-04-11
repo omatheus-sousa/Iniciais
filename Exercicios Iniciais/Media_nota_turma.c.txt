@@ -1,0 +1,34 @@
+Fazer um programa que pergunte ao usuário quantos alunos tem
+na sala dele. O número digitado não pode ser zero e nem negativo.
+Caso seja, mensagem de erro e retorna para nova digitação.
+Em seguida, através de um “while”, pede ao usuário para que entre
+com as notas de todos os alunos da sala, um por vez.
+Por fim, o programa deve mostrar a média, aritmética, da turma.
+
+#include <stdio.h>
+
+int main() {
+    
+    int alunos = 0, cont = 1, soma = 0, nota = 0;
+    float media = 0;
+    
+    inicio:
+    printf("Quantidade de alunos: ");
+    scanf("%d", &alunos);
+    
+    if (alunos <= 0){
+        printf("Erro!\n");
+        goto inicio;
+    }
+    
+    while (cont <= alunos) {
+        printf("Nota do aluno %d: ", cont);
+        scanf("%d", &nota);
+        soma = soma + nota;
+        cont++;
+    }
+    media = (float) soma / alunos;
+    printf("Media da turma = %.2f", media);
+    
+    return 0;
+}

@@ -1,0 +1,39 @@
+Elaborar um programa para o cálculo da soma, subtração,
+multiplicação e divisão de dois números reais fornecidos pelo
+usuário.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    int x, y, operador;
+
+    printf("Escolha dois numeros:\n");
+    scanf("%d %d", &x, &y);
+    printf("\nO que deseja fazer com os numeros? (+, -, x,/)\n\n");
+    printf("1 - Somar\n2 - Diminuir\n3 - Multiplicar\n4 - Dividir\n\n");
+    scanf(" %d", &operador);
+
+    if(operador == 1){
+        printf("\nResultado = %d", x + y);
+    }
+    else if(operador == 2){
+        printf("\nResultado = %d", x - y);
+    }
+    else if(operador == 3){
+        printf("\nResultado = %d", x * y);
+    }
+    else if(operador == 4){
+        if (y == 0){
+            printf("\nNao é possivel dividir por 0");
+        } else{
+            printf("\nResultado = %d", x / y);
+        }
+    }    
+    else{
+        printf("\nOperacao invalida!\n");
+    }
+
+    return 0;
+}

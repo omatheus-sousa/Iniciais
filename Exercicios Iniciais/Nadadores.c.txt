@@ -1,0 +1,36 @@
+Elabore um programa que, dada a idade de um nadador
+(entrada do programa), classifique-o de acordo com as
+seguintes categorias:
+- infantil A = 5 – 7 anos;
+- infantil B = 8 – 10 anos;
+- juvenil A = 11 – 13 anos;
+- juvenil B = 14 – 17 anos;
+ - adulto = maiores ou igual a 18 anos.
+
+#include <stdio.h>
+
+int main()
+{
+    int idade;
+    
+    inicio:
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    
+    if(idade < 5){
+        printf("Idade abaixo para categoria minima.\n");
+        goto inicio;
+    }
+    else if(idade >= 5 && idade <= 7){
+        printf("Infantil A.\n");
+    }else if(idade >= 8 && idade <= 10 ){
+        printf("Infantil B.\n");
+    }else if(idade >= 11 && idade <= 13){
+        printf("Juvenil A.\n");
+    }else if(idade >= 14 && idade <= 17){
+        printf("Juvenil B.\n");
+    }else{
+        printf("Adulto.\n");
+    }
+    return 0;
+}

@@ -8,28 +8,37 @@ aluno é aprovado, reprovado ou em exame:
 
 #include <stdio.h>
 
-    int main()
+int main()
 {
-    float nota = 0, cont = 0, media = 0, soma = 0;
-    
-    printf("Digite as notas:\n");
-    
-    while(cont < 4){
+    float media, nota, soma = 0;
+
+    printf("Digite 4 notas (entre 0 e 10):\n");
+
+    for (int i = 0; i < 4; i++)
+    {
+        voltar:
         scanf("%f", &nota);
-        cont++;
-        soma = soma + nota;
+        if(nota < 0 || nota > 10){
+            printf("Tente novamente! Entre 0 e 10:\n");
+            goto voltar;
+        }
+        soma += nota;
     }
-    
-    media = soma / cont;
-    
-    printf("A media é: %.2f\n", media);
-    
-    if(media >= 7){
+    media = (float)soma / 4;
+    printf("Media = %.1f\n", media);
+
+    if (media >= 7)
+    {
         printf("Aprovado!\n");
-    }else if(media >= 5 && media < 7){
-        printf("Em exame!");
-    }else{
-        printf("Reprovado!");
     }
-    return 0;   
+    else if (media >= 5 && media < 7)
+    {
+        printf("Recuperacao!\n");
+    }
+    else
+    {
+        printf("Reprovado!\n");
+    }
+
+    return 0;
 }

@@ -1,0 +1,31 @@
+Problema: "Maior e menor valor"
+Leia um número inteiro positivo N (1 ≤ N ≤ 1000). Em seguida, leia N números inteiros. Mostre:
+O maior número
+O menor número
+
+#include <stdio.h>
+
+int main()
+{
+    int numeros = 0, maior, menor, x = 0;
+
+    printf("Digite um numero: ");
+    scanf("%d", &numeros);
+    scanf("%d", &x);
+    menor = x;
+    maior = x;
+    for (int i = 1; i < numeros; i++)
+    {
+        scanf("%d", &x);
+        if (maior < x)
+        {
+            maior = x;
+        }
+        else if (menor > x)
+        {
+            menor = x;
+        }
+    }
+    printf("Maior: %d\nMenor: %d", maior, menor);
+    return 0;
+}

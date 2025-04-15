@@ -1,0 +1,35 @@
+Problema: "Média dos aprovados"
+Leia um número N (1 ≤ N ≤ 1000). Em seguida, leia N notas (valores reais entre 0 e 10). Calcule e mostre a média apenas das notas maiores ou iguais a 6.0, ou seja, dos alunos aprovados.
+
+Se nenhuma nota for maior ou igual a 6.0, imprima:
+Nenhuma nota válida para média.
+
+#include <stdio.h>
+
+int main()
+{
+    int notas = 0;
+    float x = 0, media = 0, soma = 0, notasvalidas = 0;
+
+    printf("Digite a quantidade de notas: ");
+    scanf("%d", &notas);
+    for (int i = 0; i < notas; i++)
+    {
+        scanf("%f", &x);
+        if (x >= 6.0)
+        {
+            notasvalidas++;
+            soma += x;
+        }
+        }
+    if (notasvalidas == 0)
+    {
+        printf("Nenhuma nota valida para media.");
+    }
+    else
+    {
+        media = (float)soma / notasvalidas;
+        printf("Media dos aprovados: %.2f", media);
+    }
+    return 0;
+}

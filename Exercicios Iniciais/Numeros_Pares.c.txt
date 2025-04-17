@@ -1,0 +1,34 @@
+Problema "numeros_pares"
+Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
+tela todos os números pares, e também a quantidade de números pares. 
+
+#include <stdio.h>
+
+int main()
+{
+    int numeros, x[50], pares = 0;
+
+    printf("Quantos numeros voce vai digitar? ");
+    scanf("%d", &numeros);
+
+    for (int i = 0; i < numeros; i++)
+    {
+        printf("Digite um numero: ");
+        scanf("%d", &x[i]);
+        if (x[i] % 2 == 0 )
+        {
+            pares++;
+        }
+    }
+    printf("Numeros pares:\n");
+    for (int i = 0; i < numeros; i++)
+    {
+        if (x[i] % 2 == 0 )
+        {
+            printf("%d  ", x[i]);
+        }
+    }
+    printf("\n\nQuantidade de pares: %d", pares);
+
+    return 0;
+}

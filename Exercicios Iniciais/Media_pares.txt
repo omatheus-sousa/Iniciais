@@ -1,0 +1,38 @@
+Problema "media_pares "
+Fazer um programa para ler um vetor de N números inteiros. Em seguida, mostrar na tela a média
+aritmética somente dos números pares lidos, com uma casa decimal. Se nenhum número par for
+digitado, mostrar a mensagem "NENHUM NUMERO PAR" 
+
+#include <stdio.h>
+
+int main()
+{
+    int elementos, x[50], pares = 0;
+    float soma = 0, media = 0;
+
+    printf("Quantos elementos vai ter o vetor? ");
+    scanf("%d", &elementos);
+
+    for (int i = 0; i < elementos; i++)
+    {
+        printf("Digite um numero: ");
+        scanf("%d", &x[i]);
+        if (x[i] % 2 == 0)
+        {
+            pares++;
+            soma += x[i];
+        }
+    }
+
+    media = (float)soma / pares;
+
+    if (pares > 0)
+    {
+        printf("Media dos pares: %.1f\n", media);
+    }
+    else
+    {
+        printf("Nenhum numero par!\n");
+    }
+    return 0;
+}

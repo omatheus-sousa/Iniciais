@@ -1,0 +1,65 @@
+Problema "dados_pessoas"
+Tem-se um conjunto de dados contendo a altura e o gênero (M, F) de N pessoas. Fazer um programa
+que calcule e escreva a maior e a menor altura do grupo, a média de altura das mulheres, e o número
+de homens. 
+
+#include <stdio.h>
+
+int main()
+{
+    int pessoas, homens = 0, mulheres = 0;
+    char nome[50];
+    float altura[50], media = 0, somamulheres = 0, maioraltura, menoraltura;
+
+    printf("Quantas pessoas serao digitadas? ");
+    scanf("%d", &pessoas);
+
+    printf("Altura da 1a pessoa: ");
+    scanf("%f", &altura[0]);
+    menoraltura = maioraltura = altura[0];
+
+    printf("Genero da 1a pessoa: ");
+    scanf(" %c", &nome[0]);
+    if (nome[0] == 'm' || nome[0] == 'M')
+    {
+        homens++;
+    }
+    if (nome[0] == 'f' || nome[0] == 'F')
+    {
+        mulheres++;
+        somamulheres += altura[0];
+        media = somamulheres / mulheres;
+    }
+
+    for (int i = 1; i < pessoas; i++)
+    {
+        printf("Altura da %da pessoa: ", i + 1);
+        scanf("%f", &altura[i]);
+        if (altura[i] > maioraltura)
+        {
+            maioraltura = altura[i];
+        }
+        if (altura[i] < menoraltura)
+        {
+            menoraltura = altura[i];
+        }
+        printf("Genero da %da pessoa: ", i + 1);
+        scanf(" %c", &nome[i]);
+        if (nome[i] == 'm' || nome[i] == 'M')
+        {
+            homens++;
+        }
+        if (nome[i] == 'f' || nome[i] == 'F')
+        {
+            mulheres++;
+            somamulheres += altura[i];
+            media = somamulheres / mulheres;
+        }
+    }
+    printf("Menor altura: %.2f\n", menoraltura);
+    printf("Maior altura: %.2f\n", maioraltura);
+    printf("Media das altura das mulheres: %.2f\n", media);
+    printf("Numero de homens: %d\n", homens);
+
+    return 0;
+}

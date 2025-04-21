@@ -1,0 +1,60 @@
+Problema "comerciante"
+Um comerciante deseja fazer o levantamento do lucro das mercadorias que ele comercializa. Para isto,
+mandou digitar um conjunto de N mercadorias, cada uma contendo nome, preço de compra e preço de
+venda das mesmas. Fazer um programa que leia tais dados e determine e escreva quantas mercadorias
+proporcionaram:
+ lucro < 10%
+ 10% ≤ lucro ≤ 20%
+ lucro > 20%
+Determine e escreva também o valor total de compra e de venda de todas as mercadorias, assim como
+o lucro total.
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int produtos, abaixo = 0, entre = 0, acima = 0;
+    char nome[50][50];
+    float compra[50], venda[50], totalcompra = 0, totalvenda = 0, lucrototal = 0, lucro = 0;
+
+    printf("Serao digitados dados de quantos produtos? ");
+    scanf("%d", &produtos);
+
+    for (int i = 0; i < produtos; i++)
+    {
+        getchar();
+        printf("\nProduto %d:", i + 1);
+        printf("\nNome: ");
+        fgets(nome[i], sizeof(nome[i]), stdin);
+        nome[i][strcspn(nome[i], "\n")] = '\0';
+        printf("Preco de compra: ");
+        scanf("%f", &compra[i]);
+        printf("Preco de venda: ");
+        scanf("%f", &venda[i]);
+        lucro = ((venda[i] - compra[i]) / compra[i]) * 100.0;
+        if (lucro < 10.0)
+        {
+            abaixo++;
+        }
+        else if (lucro >= 10.0 && lucro <= 20.0)
+        {
+            entre++;
+        }
+        else
+        {
+            acima++;
+        }
+        totalcompra += compra[i];
+        totalvenda += venda[i];
+        lucrototal = totalvenda - totalcompra;
+    }
+    printf("\nRelatorio:");
+    printf("\nLucro abaixo de 10%%: %d\n", abaixo);
+    printf("Lucro entre 10%% e 20%%: %d\n", entre);
+    printf("Lucro acima de 20%%: %d\n", acima);
+    printf("Valor total de compra: R$%.2f\n", totalcompra);
+    printf("Valor total de venda: R$%.2f\n", totalvenda);
+    printf("Lucro total: R$%.2f\n", lucrototal);
+    return 0;
+}
